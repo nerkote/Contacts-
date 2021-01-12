@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+<contact>
+	<first_name>Nermin</first_name>
+	<last_name>Terzo</last_name>
+	<phone_number>12345</phone_number>
+	<notes>moj broj</notes>
+</contact>
+<contact>
+	<first_name>Tarik</first_name>
+	<last_name>lUNJA </last_name>
+	<phone_number>123123123</phone_number>
+	<notes>pjevac</notes>
+</contact>
+</contacts>
