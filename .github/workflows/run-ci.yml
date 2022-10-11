@@ -3,10 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - crawler
-      - har-file
-      - swagger
-      - brokencrystals
+      - main
   pull_request:
     branches: [main]
   schedule:
