@@ -55,3 +55,4 @@ jobs:
         continue-on-error: true
         if: ${{ always() }}
         run: nexploit-cli scan:stop --token ${{ secrets.BRIGHT_TOKEN }} $SCAN_ID
+        
