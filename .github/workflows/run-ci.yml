@@ -24,7 +24,7 @@ jobs:
           sudo npm install -g @neuralegion/nexploit-cli --unsafe-perm=true
       - name: Save environment variables
         run: |
-          printf "NEXPLOIT_TOKEN=${{ secrets.NEXPLOIT_TOKEN }}\nREPEATER=${{ secrets.REPEATER }}\n" > .env
+          printf "BRIGHT_TOKEN=${{ secrets.BRIGHT_TOKEN }}\nREPEATER=${{ secrets.REPEATER }}\n" > .env
           cat .env
       - name: Docker-Compose
         run: |
@@ -39,8 +39,8 @@ jobs:
             --test csrf dom_xss header_security secret_tokens open_buckets                 \
             --name "💎 BrokenCrystals for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
             --crawler https://brokencrystals.com/api/config https://brokencrystals.com/  \
-            --repeater ${{ secrets.REPEATER }}                                            \
-            --token ${{ secrets.NEXPLOIT_TOKEN }})
+            --id ${{ secrets.REPEATER }}                                            \
+            --token ${{ secrets.BRIGHT_TOKEN }})
           echo "SCAN_ID=$SCAN_ID" >> $GITHUB_ENV
       - name: Get the output scan url 🔗
         run: |
@@ -55,4 +55,4 @@ jobs:
       - name: Stop Scan 🛑
         continue-on-error: true
         if: ${{ always() }}
-        run: nexploit-cli scan:stop --token ${{ secrets.NEXPLOIT_TOKEN }} $SCAN_ID
+        run: nexploit-cli scan:stop --token ${{ secrets.BRIGHT_TOKEN }} $SCAN_ID
