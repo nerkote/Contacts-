@@ -38,7 +38,7 @@ jobs:
           SCAN_ID=$(nexploit-cli scan:run \
             --name "💎 BrokenCrystals new test" \
             --crawler https://brokencrystals.com \
-            --repeater ${{ secrets.REPEATER }}
+            --repeater ${{ secrets.REPEATER }}  \
             --token ${{ secrets.BRIGHT_TOKEN }})
           echo "SCAN_ID=$SCAN_ID" >> $GITHUB_ENV
       - name: Get the output scan url 🔗
