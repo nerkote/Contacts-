@@ -26,12 +26,7 @@ jobs:
         run: |
           printf "BRIGHT_TOKEN=${{ secrets.BRIGHT_TOKEN }}\nREPEATER=${{ secrets.REPEATER }}\n" > .env
           cat .env
-      - name: Docker-Compose
-        run: |
-          sudo docker-compose --env-file=.env up -d
-          sudo docker-compose config
       - run: sleep 30s
-      - run: sudo docker-compose logs
       - name: Start Nexploit Scan 🏁
         id: start
         run: |
